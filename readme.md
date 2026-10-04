@@ -1,4 +1,4 @@
-# TUIOListener
+# TUIOListener Update with EXE and format
 
 **Simple C# TUIO v1.1 / OSC v1.1 network listener.**
 
@@ -6,36 +6,33 @@ Listen for [TUIO](http://www.tuio.org/) or [OSC](http://opensoundcontrol.org/) n
 
 Defaults to listening for TUIO on port 3333. Output radians/degrees values in TUIO data using the rads/degs option. Invert X/Y axis values in TUIO data using the invertx/y/xy option.
 
-Usage (Mono/OS X):
+Usage (Windows):
 
-    > mono TUIOListener [port] [tuio|osc] [rads|degs] [invertx|inverty|invertxy]
-    > mono TUIOListener -help
+    > TUIOListener.exe [port] [tuio|osc] [rads|degs] [invertx|inverty|invertxy]
+    > TUIOListener.exe -help
 
 Output examples:
 
-	> mono TUIOListener
-	TUIO listening on port 3333... (Press escape to quit)
+	> TUIOListener.exe
+	TUIO Listener.exe Windows V2 [FHJ/NIS 10/2026]
+         Usage: TUIOListener.exe -h|help [port] [tuio|osc] [rads|degs] [invertx|inverty|invertxy]
+         listening on port 3333... (Press escape to quit)
 	...
-	198 Object Added 10/2:0.5108514,0.4567669 0.000
-	199 Object Moved 10/2:0.5203468,0.4452846 0.045
-	200 Object Moved 10/2:0.5203468,0.4452846 0.123
+	FNum:000764 Curs-ADD id=04 x=0,1582 y=0,0552
+	FNum:000771 Curs-MOV id=04 x=0,1575 y=0,0552
+	FNum:000776 Curs-MOV id=04 x=0,1567 y=0,0552
+	FNum:000777 Curs-DEL id=04 
 	...
-	223 Object Moved 10/2:0.9283744,0.8942347 2.236
-	224 Object Removed 10/2
+    FNum:004738 Obje-ADD id=02 x=1,0000 y=0,3235 a=+0,000 cnt=005
+	FNum:004739 Obje-MOV id=02 x=1,0000 y=0,3251 a=+0,000 cnt=005
+	FNum:004740 Obje-MOV id=02 x=1,0000 y=0,3267 a=+0,000 cnt=005
+	FNum:006030 Obje-MOV id=02 x=1,0000 y=0,2919 a=-0,479 cnt=005
+	FNum:006032 Obje-MOV id=02 x=1,0000 y=0,2935 a=-0,479 cnt=005
+	FNum:006033 Obje-DEL id=02
+	...
+
 	Bye!
 
-	> mono TUIOListener 3334 osc
-	OSC listening on port 3334... (Press escape to quit)
-	...
-	/tuio/2Dobj,si alive 10
-	/tuio/2Dobj,siiffffffff set 10 2 0.5108514 0.4567669 0 0 0 0 0 0
-	/tuio/2Dobj,si fseq 198
-	/tuio/2Dobj,si alive 10 11
-	/tuio/2Dobj,siiffffffff set 10 2 0.5203468 0.4452846 0 0 0 0 0 0
-	/tuio/2Dobj,siiffffffff set 11 5 0.2395874 0.8796411 0 0 0 0 0 0
-	/tuio/2Dobj,si fseq 199
-	...
-	Bye!
 
 Libraries / Assemblies:
 * [https://github.com/gregharding/TUIOsharp](https://github.com/gregharding/TUIOsharp)
